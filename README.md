@@ -1,14 +1,18 @@
-#ssltest
-========
+# DEPRECATED
 
-##What is it? 
+This tool has not been updated in several years and should no longer be relied upon for SSL scanning. Try something like [testssl](https://testssl.sh/) instead.
+
+# ssltest
+
+
+## What is it? 
 
 
 SSLTest is a command line tool used to test SSL based servers to determine the  SSL ciphers and protocols they support.  These types of tests are commonly performed during penetration tests and compliance reviews (DSD ISM, PCI-DSS) that include a SSL server in scope.
 
 It is a Perl program, that works on Linux, Windows and Mac OS X, and is originally based on Cryptonark by Chris Mahns.  It uses OpenSSL to make SSL connections, and test for supported ciphers and protocols.
 
-##What can it do?
+## What can it do?
 
 SSLTest has a number of interesting features that set it apart from other tools with a similar purpose:
 * Checks compliance of detected ciphers and protocols against compliance standards such as DSD ISM and PCI-DSS.
@@ -17,7 +21,7 @@ SSLTest has a number of interesting features that set it apart from other tools 
 * Capability to test for certain protocols only (e.g. SSLv2, SSLv3 or TLS 1.0, 1.1 and 1.2 and any combination thereof).  If a host you are testing is freezing up when connections are made using certain protocols, you can choose to omit them.
 * Includes basic logic to determine when an SSL cipher is supported only for the purpose of telling you to upgrade your browser.  Some HTTPS sites may allow an SSL connection to be established only to provide you a friendly message that a particular version of SSL is not supported.  This tool can (sometimes) tell when this occurs, and can help you avoid the false positive findings that might otherwise occur.  The tool also provides guidance on how to confirm that this behavior is the cause of a cipher not being listed as supported, should it occur.
 
-##What should I know before using it?
+## What should I know before using it?
 
 Things you should be aware of when using the tool:
 * SSLTest relies on OpenSSL to make SSL connections and confirm which ciphers and protocols are supported, and different versions of OpenSSL can introduce significant changes between versions that may affect the results provided by the tool.  A particular new (or old) version of OpenSSL may completely change the list of ciphers and protocols the tool thinks are supported, so any time you use this tool on a new system, or update OpenSSL or Perl, make sure you test the tool on a known system first before relying on its results.
